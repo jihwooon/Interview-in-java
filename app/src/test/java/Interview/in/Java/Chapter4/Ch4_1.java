@@ -30,7 +30,7 @@ public class Ch4_1 {
     class Describe_of {
 
         @Nested
-        @DisplayName("1이 홀수이면")
+        @DisplayName("1이 홀수 개이면")
         class Context_with_odd_number {
           @Test
           @DisplayName("결과 값이 1을 리턴한다.")
@@ -40,7 +40,7 @@ public class Ch4_1 {
         }
 
         @Nested
-        @DisplayName("1이 짝수이면")
+        @DisplayName("1이 짝수 개이면")
         class Context_with_even_number {
             @Test
             @DisplayName("결과 값이 0을 리턴한다.")
