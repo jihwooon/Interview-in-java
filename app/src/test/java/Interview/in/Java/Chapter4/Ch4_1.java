@@ -7,6 +7,8 @@ package Interview.in.Java.Chapter4;
 * 64비트로 이루어진 숫자가 굉장히 많다면, 패리티를 어떻게 계산해야 할까?
 * */
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -23,10 +25,28 @@ public class Ch4_1 {
         return result;
     }
 
-    @Test
-    void result() {
-        assertThat(solution(1101)).isEqualTo((short) 1);
-        assertThat(solution(1111)).isEqualTo((short) 0);
-        assertThat(solution(1001)).isEqualTo((short) 1);
+    @Nested
+    @DisplayName("2진수의 패리티의 1로 세팅된 비트의 개수가")
+    class Describe_of {
+
+        @Nested
+        @DisplayName("1이 홀수이면")
+        class Context_with_odd_number {
+          @Test
+          @DisplayName("결과 값이 1을 리턴한다.")
+          void it_returns_a_valid_one() {
+              assertThat(solution(1101)).isEqualTo((short) 1);
+          }
+        }
+
+        @Nested
+        @DisplayName("1이 짝수이면")
+        class Context_with_even_number {
+            @Test
+            @DisplayName("결과 값이 0을 리턴한다.")
+            void it_returns_a_valid_zero() {
+                assertThat(solution(1111)).isEqualTo((short) 0);
+            }
+        }
     }
 }
