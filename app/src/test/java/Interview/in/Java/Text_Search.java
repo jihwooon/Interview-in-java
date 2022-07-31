@@ -26,14 +26,9 @@ public class Text_Search {
         str = str.toUpperCase();
         t = Character.toUpperCase(t);
 
-        System.out.println("str = " + str + ", t = " + t);
-
-        //
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == t) {
-                System.out.println("str.charAt = " + str);
                 answer++;
-                System.out.println("answer++ = " + answer);
             }
         }
 
